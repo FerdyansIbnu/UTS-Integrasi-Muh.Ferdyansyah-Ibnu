@@ -1,0 +1,2257 @@
+{
+	"info": {
+		"_postman_id": "d158b80b-776f-4157-b689-74a8242026aa",
+		"name": "UTS - Ferdyansyah Ibnu",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44238542"
+	},
+	"item": [
+		{
+			"name": "Customer-service",
+			"item": [
+				{
+					"name": "Input daftar customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nama\": \"Tiara Ulfi\",\r\n  \"email\": \"ulfiti@gmail.com\",\r\n  \"alamat\": \"Jl. Pucang No.3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}api/customers",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sukses",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"nama\": \"Budi Santoso\",\r\n  \"email\": \"budi@gmail.com\",\r\n  \"alamat\": \"Jl. Anggrek No. 2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}api/customers",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8002"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 14:41:05 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 14:41:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"nama\": \"Budi Santoso\",\n    \"email\": \"budi@gmail.com\",\n    \"alamat\": \"Jl. Anggrek No. 2\",\n    \"updated_at\": \"2025-05-02T14:41:05.000000Z\",\n    \"created_at\": \"2025-05-02T14:41:05.000000Z\",\n    \"id\": 1\n}"
+						},
+						{
+							"name": "gagal",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"nama\": \"Budi Santoso\",\r\n  \"email\": \"budi@gmail.com\",\r\n  \"alamat\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}api/customers",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8002"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 14:41:47 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 14:41:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Validation Failed\",\n    \"errors\": {\n        \"email\": [\n            \"The email has already been taken.\"\n        ],\n        \"alamat\": [\n            \"The alamat field is required.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "List Customer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/customers",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sukses",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}api/customers",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8002"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 14:45:49 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 14:45:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"nama\": \"Budi Santoso\",\n        \"email\": \"budi@gmail.com\",\n        \"alamat\": \"Jl. Anggrek No. 2\",\n        \"created_at\": \"2025-05-02T14:41:05.000000Z\",\n        \"updated_at\": \"2025-05-02T14:41:05.000000Z\"\n    },\n    {\n        \"id\": 2,\n        \"nama\": \"Tegar Priama\",\n        \"email\": \"tegarp@gmail.com\",\n        \"alamat\": \"Jl. Ketintang Baru No.89 Sby\",\n        \"created_at\": \"2025-05-02T14:43:41.000000Z\",\n        \"updated_at\": \"2025-05-02T14:43:41.000000Z\"\n    },\n    {\n        \"id\": 3,\n        \"nama\": \"Geovani Putri\",\n        \"email\": \"geovaniput@gmail.com\",\n        \"alamat\": \"Jl. Ngagel Jaya No.90\",\n        \"created_at\": \"2025-05-02T14:44:26.000000Z\",\n        \"updated_at\": \"2025-05-02T14:44:26.000000Z\"\n    },\n    {\n        \"id\": 4,\n        \"nama\": \"Tiara Ulfi\",\n        \"email\": \"ulfiti@gmail.com\",\n        \"alamat\": \"Jl. Pucang No.3\",\n        \"created_at\": \"2025-05-02T14:44:59.000000Z\",\n        \"updated_at\": \"2025-05-02T14:44:59.000000Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Muncul data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/customers/6",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"customers",
+								"6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sukses",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}api/customers/2",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"customers",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8002"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 14:46:33 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 14:46:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"nama\": \"Tegar Priama\",\n    \"email\": \"tegarp@gmail.com\",\n    \"alamat\": \"Jl. Ketintang Baru No.89 Sby\",\n    \"created_at\": \"2025-05-02T14:43:41.000000Z\",\n    \"updated_at\": \"2025-05-02T14:43:41.000000Z\"\n}"
+						},
+						{
+							"name": "gagal",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}api/customers/6",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"customers",
+										"6"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8002"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 14:47:02 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 14:47:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Customer not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit data",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nama\": \"Tiara Ulfa\",\r\n  \"email\": \"ulfiti@gmail.com\",\r\n  \"alamat\": \"Jl. Pucang No.30\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}api/customers/5",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"customers",
+								"5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sukses",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"nama\": \"Tiara Ulfa\",\r\n  \"email\": \"ulfiti@gmail.com\",\r\n  \"alamat\": \"Jl. Pucang No.30\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}api/customers/4",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"customers",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8002"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 14:49:03 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 14:49:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 4,\n    \"nama\": \"Tiara Ulfa\",\n    \"email\": \"ulfiti@gmail.com\",\n    \"alamat\": \"Jl. Pucang No.30\",\n    \"created_at\": \"2025-05-02T14:44:59.000000Z\",\n    \"updated_at\": \"2025-05-02T14:48:38.000000Z\"\n}"
+						},
+						{
+							"name": "gagal",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"nama\": \"Tiara Ulfa\",\r\n  \"email\": \"ulfiti@gmail.com\",\r\n  \"alamat\": \"Jl. Pucang No.30\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}api/customers/5",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"customers",
+										"5"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8002"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 14:49:30 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 14:49:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Customer not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Hapus data",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/customers/5",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"customers",
+								"5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sukses",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}api/customers/5",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"customers",
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8002"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 14:50:55 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 14:50:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Customer deleted successfully\"\n}"
+						},
+						{
+							"name": "gagal",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}api/customers/5",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"customers",
+										"5"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8002"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 14:51:24 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 14:51:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Customer not found\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Product-service",
+			"item": [
+				{
+					"name": "Input daftar product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nama_produk\": \"Sepatu Futsal Nike\",\r\n  \"deskripsi_produk\": \"Original, dan warna elegan\",\r\n  \"harga\": 400000,\r\n  \"opsi_pembayaran\": \"COD\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}api/product",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sukses",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"nama_produk\": \"Topi Tactical\",\r\n  \"deskripsi_produk\": \"Tebal, dan tahan lama.\",\r\n  \"harga\": 50000,\r\n  \"opsi_pembayaran\": \"E-WALLET\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}api/product",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"product"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 14:55:21 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 14:55:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"nama_produk\": \"Topi Tactical\",\n    \"deskripsi_produk\": \"Tebal, dan tahan lama.\",\n    \"harga\": 50000,\n    \"opsi_pembayaran\": \"E-WALLET\",\n    \"updated_at\": \"2025-05-02T14:55:20.000000Z\",\n    \"created_at\": \"2025-05-02T14:55:20.000000Z\",\n    \"id\": 3\n}"
+						},
+						{
+							"name": "gagal",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"nama_produk\": \"Topi Tactical\",\r\n  \"deskripsi_produk\": \"Tebal, dan tahan lama.\",\r\n  \"harga\": 50000,\r\n  \"opsi_pembayaran\": \"e-wallet\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}api/product",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"product"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 14:55:43 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 14:55:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Validation Failed\",\n    \"errors\": {\n        \"opsi_pembayaran\": [\n            \"The selected opsi pembayaran is invalid.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "List produk",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/product",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sukses",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}api/product",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"product"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:03:13 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:03:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"nama_produk\": \"Jaket Hoodie\",\n        \"deskripsi_produk\": \"Jaket berbahan fleece, nyaman untuk udara dingin.\",\n        \"harga\": \"150000.00\",\n        \"opsi_pembayaran\": \"COD\",\n        \"created_at\": \"2025-05-02T14:39:13.000000Z\",\n        \"updated_at\": \"2025-05-02T14:39:13.000000Z\"\n    },\n    {\n        \"id\": 2,\n        \"nama_produk\": \"Jaket Hoodie\",\n        \"deskripsi_produk\": \"Jaket berbahan fleece, nyaman untuk udara dingin.\",\n        \"harga\": \"150000.00\",\n        \"opsi_pembayaran\": \"COD\",\n        \"created_at\": \"2025-05-02T14:40:37.000000Z\",\n        \"updated_at\": \"2025-05-02T14:40:37.000000Z\"\n    },\n    {\n        \"id\": 3,\n        \"nama_produk\": \"Topi Tactical\",\n        \"deskripsi_produk\": \"Tebal, dan tahan lama.\",\n        \"harga\": \"50000.00\",\n        \"opsi_pembayaran\": \"E-WALLET\",\n        \"created_at\": \"2025-05-02T14:55:20.000000Z\",\n        \"updated_at\": \"2025-05-02T14:55:20.000000Z\"\n    },\n    {\n        \"id\": 4,\n        \"nama_produk\": \"Kaos Kaki Bola\",\n        \"deskripsi_produk\": \"Warna bervariasi, dan bahan katun\",\n        \"harga\": \"75000.00\",\n        \"opsi_pembayaran\": \"TRANSFER\",\n        \"created_at\": \"2025-05-02T14:59:52.000000Z\",\n        \"updated_at\": \"2025-05-02T14:59:52.000000Z\"\n    },\n    {\n        \"id\": 5,\n        \"nama_produk\": \"T-Shirt Arsenal\",\n        \"deskripsi_produk\": \"Lengan panjang, dan berbahan premium\",\n        \"harga\": \"200000.00\",\n        \"opsi_pembayaran\": \"TRANSFER\",\n        \"created_at\": \"2025-05-02T15:01:00.000000Z\",\n        \"updated_at\": \"2025-05-02T15:01:00.000000Z\"\n    },\n    {\n        \"id\": 6,\n        \"nama_produk\": \"Sepatu Futsal Nike\",\n        \"deskripsi_produk\": \"Original, dan warna elegan\",\n        \"harga\": \"400000.00\",\n        \"opsi_pembayaran\": \"COD\",\n        \"created_at\": \"2025-05-02T15:02:10.000000Z\",\n        \"updated_at\": \"2025-05-02T15:02:10.000000Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Muncul data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/product/7",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"product",
+								"7"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sukses",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}api/product/",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"product",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:04:29 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:04:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"nama_produk\": \"Jaket Hoodie\",\n    \"deskripsi_produk\": \"Jaket berbahan fleece, nyaman untuk udara dingin.\",\n    \"harga\": \"150000.00\",\n    \"opsi_pembayaran\": \"COD\",\n    \"created_at\": \"2025-05-02T14:39:13.000000Z\",\n    \"updated_at\": \"2025-05-02T14:39:13.000000Z\"\n}"
+						},
+						{
+							"name": "gagal",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}api/product/7",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"product",
+										"7"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:04:59 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:04:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Product not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit data",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nama_produk\": \"Sepatu Futsal Nike\",\r\n  \"deskripsi_produk\": \"Original, dan warna elegan\",\r\n  \"harga\": 375000,\r\n  \"opsi_pembayaran\": \"\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}api/product/6",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"product",
+								"6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sukses",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"nama_produk\": \"Sepatu Futsal Nike\",\r\n  \"deskripsi_produk\": \"Original, dan warna elegan\",\r\n  \"harga\": 375000,\r\n  \"opsi_pembayaran\": \"COD\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}api/product/6",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"product",
+										"6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:06:53 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:06:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 6,\n    \"nama_produk\": \"Sepatu Futsal Nike\",\n    \"deskripsi_produk\": \"Original, dan warna elegan\",\n    \"harga\": 375000,\n    \"opsi_pembayaran\": \"COD\",\n    \"created_at\": \"2025-05-02T15:02:10.000000Z\",\n    \"updated_at\": \"2025-05-02T15:06:53.000000Z\"\n}"
+						},
+						{
+							"name": "gagal",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"nama_produk\": \"Sepatu Futsal Nike\",\r\n  \"deskripsi_produk\": \"Original, dan warna elegan\",\r\n  \"harga\": 375000,\r\n  \"opsi_pembayaran\": \"\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}api/product/6",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"product",
+										"6"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:07:37 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:07:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Validation Failed\",\n    \"errors\": {\n        \"opsi_pembayaran\": [\n            \"The opsi pembayaran field is required.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Hapus data",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/product/10",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"product",
+								"10"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sukses",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}api/product/1",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"product",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:08:13 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:08:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Product deleted successfully\"\n}"
+						},
+						{
+							"name": "gagal",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}api/product/10",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"product",
+										"10"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:08:31 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:08:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Product not found\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Order-Service",
+			"item": [
+				{
+					"name": "Order items",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"customer_id\": 1,\r\n  \"product_id\": 4,\r\n  \"quantity\": 5\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}api/orders",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "gagal",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customer_id\": 1,\r\n  \"product_id\": 2,\r\n  \"quantity\": 3\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}api/orders",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8001"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:13:48 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:13:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Product not found\"\n}"
+						},
+						{
+							"name": "sukses-1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customer_id\": 1,\r\n  \"product_id\": 2,\r\n  \"quantity\": 3\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}api/orders",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8001"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:22:10 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:22:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Order created successfully\",\n    \"data\": {\n        \"customer_id\": 1,\n        \"product_id\": 2,\n        \"quantity\": 3,\n        \"total_price\": 450000,\n        \"updated_at\": \"2025-05-02T15:22:10.000000Z\",\n        \"created_at\": \"2025-05-02T15:22:10.000000Z\",\n        \"id\": 1\n    },\n    \"customer\": {\n        \"id\": 1,\n        \"nama\": \"Budi Santoso\",\n        \"email\": \"budi@gmail.com\",\n        \"alamat\": \"Jl. Anggrek No. 2\",\n        \"created_at\": \"2025-05-02T14:41:05.000000Z\",\n        \"updated_at\": \"2025-05-02T14:41:05.000000Z\"\n    },\n    \"product\": {\n        \"id\": 2,\n        \"nama_produk\": \"Jaket Hoodie\",\n        \"deskripsi_produk\": \"Jaket berbahan fleece, nyaman untuk udara dingin.\",\n        \"harga\": \"150000.00\",\n        \"opsi_pembayaran\": \"COD\",\n        \"created_at\": \"2025-05-02T14:40:37.000000Z\",\n        \"updated_at\": \"2025-05-02T14:40:37.000000Z\"\n    }\n}"
+						},
+						{
+							"name": "sukses-2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customer_id\": 3,\r\n  \"product_id\": 5,\r\n  \"quantity\": 10\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}api/orders",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8001"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:24:14 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:24:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Order created successfully\",\n    \"data\": {\n        \"customer_id\": 3,\n        \"product_id\": 5,\n        \"quantity\": 10,\n        \"total_price\": 2000000,\n        \"updated_at\": \"2025-05-02T15:24:14.000000Z\",\n        \"created_at\": \"2025-05-02T15:24:14.000000Z\",\n        \"id\": 2\n    },\n    \"customer\": {\n        \"id\": 3,\n        \"nama\": \"Geovani Putri\",\n        \"email\": \"geovaniput@gmail.com\",\n        \"alamat\": \"Jl. Ngagel Jaya No.90\",\n        \"created_at\": \"2025-05-02T14:44:26.000000Z\",\n        \"updated_at\": \"2025-05-02T14:44:26.000000Z\"\n    },\n    \"product\": {\n        \"id\": 5,\n        \"nama_produk\": \"T-Shirt Arsenal\",\n        \"deskripsi_produk\": \"Lengan panjang, dan berbahan premium\",\n        \"harga\": \"200000.00\",\n        \"opsi_pembayaran\": \"TRANSFER\",\n        \"created_at\": \"2025-05-02T15:01:00.000000Z\",\n        \"updated_at\": \"2025-05-02T15:01:00.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "List order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/orders",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sukses",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}api/orders",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8001"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:26:01 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:26:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Orders retrieved successfully\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"customer_id\": 1,\n            \"product_id\": 2,\n            \"quantity\": 3,\n            \"total_price\": 450000,\n            \"created_at\": \"2025-05-02T15:22:10.000000Z\",\n            \"updated_at\": \"2025-05-02T15:22:10.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"customer_id\": 3,\n            \"product_id\": 5,\n            \"quantity\": 10,\n            \"total_price\": 2000000,\n            \"created_at\": \"2025-05-02T15:24:14.000000Z\",\n            \"updated_at\": \"2025-05-02T15:24:14.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Muncul data order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/orders/4",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"orders",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sukses",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}api/orders/2",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"orders",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8001"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:26:56 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:26:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Order retrieved successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"customer_id\": 3,\n        \"product_id\": 5,\n        \"quantity\": 10,\n        \"total_price\": 2000000,\n        \"created_at\": \"2025-05-02T15:24:14.000000Z\",\n        \"updated_at\": \"2025-05-02T15:24:14.000000Z\"\n    }\n}"
+						},
+						{
+							"name": "gagal",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}api/orders/4",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"orders",
+										"4"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8001"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:27:13 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:27:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Order not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"customer_id\": 2,\r\n  \"product_id\": 5,\r\n  \"quantity\": 7\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}api/orders/4",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"orders",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sukses",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customer_id\": 2,\r\n  \"product_id\": 5,\r\n  \"quantity\": 7\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}api/orders/",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"orders",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8001"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:28:52 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:28:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Order updated successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"customer_id\": 2,\n        \"product_id\": 5,\n        \"quantity\": 7,\n        \"total_price\": 1400000,\n        \"created_at\": \"2025-05-02T15:24:14.000000Z\",\n        \"updated_at\": \"2025-05-02T15:28:52.000000Z\"\n    },\n    \"customer\": {\n        \"id\": 2,\n        \"nama\": \"Tegar Priama\",\n        \"email\": \"tegarp@gmail.com\",\n        \"alamat\": \"Jl. Ketintang Baru No.89 Sby\",\n        \"created_at\": \"2025-05-02T14:43:41.000000Z\",\n        \"updated_at\": \"2025-05-02T14:43:41.000000Z\"\n    },\n    \"product\": {\n        \"id\": 5,\n        \"nama_produk\": \"T-Shirt Arsenal\",\n        \"deskripsi_produk\": \"Lengan panjang, dan berbahan premium\",\n        \"harga\": \"200000.00\",\n        \"opsi_pembayaran\": \"TRANSFER\",\n        \"created_at\": \"2025-05-02T15:01:00.000000Z\",\n        \"updated_at\": \"2025-05-02T15:01:00.000000Z\"\n    }\n}"
+						},
+						{
+							"name": "gagal",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customer_id\": 2,\r\n  \"product_id\": 5,\r\n  \"quantity\": 7\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}api/orders/4",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"orders",
+										"4"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8001"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:29:28 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:29:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Order not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Hapus data",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/orders/4",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"orders",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sukses",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}api/orders/2",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"orders",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8001"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:31:15 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:31:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Order deleted successfully\"\n}"
+						},
+						{
+							"name": "gagal",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}api/orders/4",
+									"host": [
+										"{{base_url}}api"
+									],
+									"path": [
+										"orders",
+										"4"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8001"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:31:30 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 May 2025 15:31:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Order not found\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
