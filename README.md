@@ -1,4 +1,4 @@
-# 🧾 Enterprise Integration - Microservice API (Laravel 10)
+#Enterprise Integration - Microservice API (Laravel 10)
 
 Proyek ini merupakan implementasi arsitektur **microservices** menggunakan Laravel 10. Terdapat 3 layanan utama:
 
@@ -10,9 +10,9 @@ Setiap layanan berfungsi secara independen dan berkomunikasi satu sama lain mela
 
 ---
 
-## 🏗️ Struktur Layanan
+##Struktur Layanan
 
-### 📌 1. Customer Service
+###1. Customer Service
 - Menyimpan dan menampilkan data pelanggan.
 - Endpoint:
   - `GET /api/customers`
@@ -23,7 +23,7 @@ Setiap layanan berfungsi secara independen dan berkomunikasi satu sama lain mela
 
 ---
 
-### 📌 2. Product Service
+###2. Product Service
 - Mengelola data produk.
 - Endpoint:
   - `GET /api/produk`
@@ -34,7 +34,7 @@ Setiap layanan berfungsi secara independen dan berkomunikasi satu sama lain mela
 
 ---
 
-### 📌 3. Order Service
+###3. Order Service
 - Membuat pesanan berdasarkan data dari customer dan produk.
 - Endpoint:
   - `GET /api/orders`
